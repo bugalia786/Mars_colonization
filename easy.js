@@ -49,12 +49,15 @@ function turnClick(square)
         return;
     }
     var winHUMAN = checkWin(Board, HUMAN);
+    var winCOMP = checkWin(Board, COMP);
     if(winHUMAN[0] === true)
     {
          Winner(winHUMAN[1], HUMAN);
         return;
-    }
-    else
+    }else if(winCOMP[0]===true){
+	Winner(winCOMP[1], COMP);
+        return;
+    }else
     {
         if(checkTie()) 
         {
@@ -105,7 +108,7 @@ function checkTie()
     return false; 
 }
 
-function declareWinner(arrange, player)
+function Winner(arrange, player)
 {
     var text;
     var color;
