@@ -159,7 +159,8 @@ function randomMove()
 
 function findBestMove()
 {
-    var i = minimax(Board, COMP)[1]; 
+    var empty = emptySquares(Board);
+    var i = empty[Math.floor(Math.random() * empty.length)];
     Board[i] = COMP; 
     document.getElementById(i).innerText = COMP;
 }
